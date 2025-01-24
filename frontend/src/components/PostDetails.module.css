@@ -1,0 +1,28 @@
+£.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.content {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.editLink {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1.2em;
+}
+
+.editLink:hover {
+  text-decoration: underline;
+}
