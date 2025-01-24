@@ -69,11 +69,38 @@ blog-post-management-system
 - **PUT** `/posts/:id`: Update a blog post by ID.
 - **DELETE** `/posts/:id`: Delete a blog post by ID.
 
+## Direct MongoDB Operations
+
+Here are equivalent commands you can run in the Mongo shell for the same CRUD operations:
+```javascript
+use blog-post-management
+
+// Create a new post
+db.posts.insertOne({ title: "Example Title", content: "Example Content", createdAt: new Date() })
+
+// Get all posts
+db.posts.find()
+
+// Search by title (case-insensitive)
+db.posts.find({ title: /searchTerm/i })
+
+// Get a single post by ID
+db.posts.findOne({ _id: ObjectId("YOUR_ID_HERE") })
+
+// Update a post
+db.posts.updateOne(
+  { _id: ObjectId("YOUR_ID_HERE") },
+  { $set: { title: "New Title", content: "New Content" } }
+)
+
+// Delete a post
+db.posts.deleteOne({ _id: ObjectId("YOUR_ID_HERE") })
+```
+
 ## Additional Features (Optional)
 - Search functionality for blog posts.
 - Pagination for the list of blog posts.
 - Sorting options for blog posts.
-- Basic user authentication for protected routes.
 
 ## Evaluation Criteria
 - Functionality
